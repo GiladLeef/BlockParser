@@ -47,10 +47,10 @@ def read_varint(file):
         data = b + data
     return data
 
-dirA = sys.argv[1]
+dirA = './blocks/'
 
 fList = os.listdir(dirA)
-fList = [x for x in fList if (x.endswith('.dat') and x.startswith('blk'))]
+fList = [x for x in fList if (x.endswith('.dat'))]
 fList.sort()
 
 for i in fList:
