@@ -47,10 +47,7 @@ def read_varint(file):
         data = b + data
     return data
 
-dirA = './blocks/' # Directory where blk*.dat files are stored
-#dirA = sys.argv[1]
-dirB = './result/' # Directory where to save parsing results
-#dirA = sys.argv[2]
+dirA = sys.argv[1]
 
 fList = os.listdir(dirA)
 fList = [x for x in fList if (x.endswith('.dat') and x.startswith('blk'))]
@@ -241,7 +238,7 @@ for i in fList:
         if tmpHex != MerkleRoot:
             print ('Merkle roots does not match! >',MerkleRoot,tmpHex)
     f.close()
-    f = open(dirB + nameRes,'w')
+    f = open('output.txt', 'w')
     for j in resList:
         f.write(j + '\n')
     f.close()
