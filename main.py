@@ -65,6 +65,7 @@ for i in fList:
     tmpHex = ''
     fSize = os.path.getsize(t)
     while f.tell() != fSize:
+        print("Block: " + tmpHex)
         tmpHex = read_bytes(f,4)
         resList.append('Magic number = ' + tmpHex)
         tmpHex = read_bytes(f,4)
